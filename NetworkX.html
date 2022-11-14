@@ -6321,8 +6321,8 @@ the flow values in the edges</tt>)</span>
   <span class='id identifier rubyid_edge_list'>edge_list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
 
   <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_adj'>adj</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_u_edges'>u_edges</span><span class='op'>|</span>
-    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>spec_helper</span><span class='tstring_end'>&#39;</span></span>
-    <span class='const'>RSpec</span><span class='period'>.</span><span class='id identifier rubyid_describe'>describe</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/DiGraph.html" title="NetworkX::DiGraph (class)">DiGraph</a></span></span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>../../../spec/spec_helper</span><span class='tstring_end'>&#39;</span></span> <span class='comment'># require &#39;spec_helper&#39;
+</span>    <span class='const'>RSpec</span><span class='period'>.</span><span class='id identifier rubyid_describe'>describe</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/DiGraph.html" title="NetworkX::DiGraph (class)">DiGraph</a></span></span> <span class='kw'>do</span>
       <span class='id identifier rubyid_subject'>subject</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_graph'>graph</span> <span class='rbrace'>}</span>
 
       <span class='id identifier rubyid_let'>let</span><span class='lparen'>(</span><span class='symbol'>:graph</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_described_class'>described_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='rbrace'>}</span>
@@ -18031,7 +18031,7 @@ predcessor hash and distance hash</tt>)</span>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 14 15:03:57 2022 by
+  Generated on Mon Nov 14 15:12:30 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

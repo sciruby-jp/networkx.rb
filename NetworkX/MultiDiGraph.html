@@ -1180,6 +1180,7 @@
       <pre class="lines">
 
 
+221
 222
 223
 224
@@ -1196,11 +1197,10 @@
 235
 236
 237
-238
-239</pre>
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 221</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edge_subgraph'>edge_subgraph</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_edges'>edges</span>
@@ -1279,12 +1279,12 @@
       <pre class="lines">
 
 
+150
 151
-152
-153</pre>
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_in_degree'>in_degree</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='ivar'>@pred</span><span class='lbracket'>[</span><span class='id identifier rubyid_node'>node</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span>
@@ -1413,12 +1413,12 @@
       <pre class="lines">
 
 
+168
 169
-170
-171</pre>
+170</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 168</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_number_of_edges'>number_of_edges</span>
   <span class='ivar'>@adj</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_flat_map'>flat_map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:values</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span>
@@ -1482,12 +1482,12 @@
       <pre class="lines">
 
 
+160
 161
-162
-163</pre>
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 161</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_out_degree'>out_degree</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='ivar'>@adj</span><span class='lbracket'>[</span><span class='id identifier rubyid_node'>node</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span>
@@ -1649,17 +1649,17 @@
       <pre class="lines">
 
 
+135
 136
 137
 138
 139
 140
 141
-142
-143</pre>
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 136</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_reverse'>reverse</span>
   <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../NetworkX.html" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="NetworkX::MultiDiGraph (class)">MultiDiGraph</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="DiGraph.html#initialize-instance_method" title="NetworkX::DiGraph#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='op'>**</span><span class='ivar'>@graph</span><span class='rparen'>)</span>
@@ -1730,6 +1730,7 @@
       <pre class="lines">
 
 
+179
 180
 181
 182
@@ -1738,11 +1739,10 @@
 185
 186
 187
-188
-189</pre>
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 179</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_size'>size</span><span class='lparen'>(</span><span class='id identifier rubyid_is_weighted'>is_weighted</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_is_weighted'>is_weighted</span>
@@ -1813,6 +1813,7 @@
       <pre class="lines">
 
 
+196
 197
 198
 199
@@ -1829,11 +1830,10 @@
 210
 211
 212
-213
-214</pre>
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subgraph'>subgraph</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_nodes'>nodes</span>
@@ -1968,8 +1968,7 @@
 126
 127
 128
-129
-130</pre>
+129</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/multidigraph.rb', line 120</span>
@@ -1979,7 +1978,6 @@
   <span class='ivar'>@nodes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_node'>node</span><span class='comma'>,</span> <span class='id identifier rubyid_node_attr'>node_attr</span><span class='op'>|</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_add_node'>add_node</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_node_attr'>node_attr</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
   <span class='ivar'>@adj</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2_edges'>node2_edges</span><span class='op'>|</span>
     <span class='id identifier rubyid_node2_edges'>node2_edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_node2'>node2</span><span class='comma'>,</span> <span class='id identifier rubyid_edges'>edges</span><span class='op'>|</span>
-      <span class='id identifier rubyid_edge_attrs'>edge_attrs</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
       <span class='id identifier rubyid_edges'>edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid__key'>_key</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2'>node2</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
@@ -2062,7 +2060,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 14 15:03:58 2022 by
+  Generated on Mon Nov 14 15:12:31 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
