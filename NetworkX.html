@@ -9716,7 +9716,7 @@ predcessor hash and distance hash</tt>)</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_edge_id'>edge_id</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_edge'>edge</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_edge'>edge</span> <span class='kw'>if</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_directed?'>directed?</span>
-  <span class='kw'>return</span> <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_edge'>edge</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span> <span class='op'>+</span> <span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
+  <span class='kw'>return</span> <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_edge'>edge</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_edge'>edge</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
 
   <span class='const'>Set</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_edge'>edge</span><span class='comma'>,</span> <span class='id identifier rubyid_edge'>edge</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
@@ -13961,18 +13961,14 @@ predcessor hash and distance hash</tt>)</span>
 58
 59
 60
-61
-62
-63</pre>
+61</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/auxillary_functions/cliques.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_number_of_cliques'>number_of_cliques</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_cliques'>cliques</span> <span class='op'>=</span> <span class='id identifier rubyid_find_cliques'>find_cliques</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_num_cliq_arr'>num_cliq_arr</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_cliques'>cliques</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_num_cliq_arr'>num_cliq_arr</span> <span class='op'>&lt;&lt;</span> <span class='int'>1</span> <span class='kw'>if</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_num_cliq_arr'>num_cliq_arr</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
+  <span class='id identifier rubyid_cliques'>cliques</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -18035,7 +18031,7 @@ predcessor hash and distance hash</tt>)</span>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 14 13:39:22 2022 by
+  Generated on Mon Nov 14 15:03:57 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
