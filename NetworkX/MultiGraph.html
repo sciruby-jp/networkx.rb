@@ -823,7 +823,8 @@
 115
 116
 117
-118</pre>
+118
+119</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 107</span>
@@ -834,6 +835,7 @@
   <span class='ivar'>@adj</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_ws'>ws</span><span class='op'>|</span>
     <span class='id identifier rubyid_ws'>ws</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_w'>w</span><span class='comma'>,</span> <span class='id identifier rubyid_key_and_info'>key_and_info</span><span class='op'>|</span>
       <span class='kw'>next</span> <span class='kw'>if</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_w'>w</span>
+
       <span class='id identifier rubyid_key_and_info'>key_and_info</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='op'>|</span>
         <span class='id identifier rubyid_data'>data</span> <span class='op'>?</span> <span class='kw'>yield</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_w'>w</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='kw'>yield</span><span class='lparen'>(</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_w'>w</span><span class='comma'>,</span> <span class='id identifier rubyid_key'>key</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
@@ -1027,7 +1029,6 @@
       <pre class="lines">
 
 
-170
 171
 172
 173
@@ -1044,10 +1045,11 @@
 184
 185
 186
-187</pre>
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 170</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edge_subgraph'>edge_subgraph</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_edges'>edges</span>
@@ -1465,7 +1467,6 @@
       <pre class="lines">
 
 
-143
 144
 145
 146
@@ -1484,10 +1485,11 @@
 159
 160
 161
-162</pre>
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subgraph'>subgraph</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_nodes'>nodes</span>
@@ -1548,7 +1550,6 @@
       <pre class="lines">
 
 
-124
 125
 126
 127
@@ -1559,10 +1560,11 @@
 132
 133
 134
-135</pre>
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 124</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/multigraph.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_undirected'>to_undirected</span>
   <span class='id identifier rubyid_graph'>graph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../NetworkX.html" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Graph.html" title="NetworkX::Graph (class)">Graph</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Graph.html#initialize-instance_method" title="NetworkX::Graph#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='op'>**</span><span class='ivar'>@graph</span><span class='rparen'>)</span>
@@ -1586,7 +1588,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Nov 14 16:21:38 2022 by
+  Generated on Tue Nov 15 06:25:04 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
