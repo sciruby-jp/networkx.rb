@@ -1096,7 +1096,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#dfs_nodes-instance_method" title="#dfs_nodes (instance method)">#<strong>dfs_nodes</strong>(node)  &#x21d2; Object </a>
+      <a href="#dfs_preorder_nodes-instance_method" title="#dfs_preorder_nodes (instance method)">#<strong>dfs_preorder_nodes</strong>(node)  &#x21d2; Object </a>
     
 
     
@@ -1188,7 +1188,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#each_dfs_node-instance_method" title="#each_dfs_node (instance method)">#<strong>each_dfs_node</strong>(node)  &#x21d2; Object </a>
+      <a href="#each_dfs_preorder_node-instance_method" title="#each_dfs_preorder_node (instance method)">#<strong>each_dfs_preorder_node</strong>(node)  &#x21d2; Object </a>
     
 
     
@@ -4039,9 +4039,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="dfs_nodes-instance_method">
+  <h3 class="signature " id="dfs_preorder_nodes-instance_method">
   
-    #<strong>dfs_nodes</strong>(node)  &#x21d2; <tt>Object</tt> 
+    #<strong>dfs_preorder_nodes</strong>(node)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4071,7 +4071,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 452</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_dfs_nodes'>dfs_nodes</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_dfs_preorder_nodes'>dfs_preorder_nodes</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_each_dfs_node'>each_dfs_node</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -4267,9 +4267,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="each_dfs_node-instance_method">
+  <h3 class="signature " id="each_dfs_preorder_node-instance_method">
   
-    #<strong>each_dfs_node</strong>(node)  &#x21d2; <tt>Object</tt> 
+    #<strong>each_dfs_preorder_node</strong>(node)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -4312,11 +4312,11 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 457</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_each_dfs_node'>each_dfs_node</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
-  <span class='kw'>return</span> <span class='id identifier rubyid_enum_for'>enum_for</span><span class='lparen'>(</span><span class='symbol'>:each_dfs_node</span><span class='comma'>,</span> <span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_each_dfs_preorder_node'>each_dfs_preorder_node</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_enum_for'>enum_for</span><span class='lparen'>(</span><span class='symbol'>:each_dfs_preorder_node</span><span class='comma'>,</span> <span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
 
   <span class='id identifier rubyid_st'>st</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_node'>node</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_used'>used</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Array.html" title="Array (class)">Array</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_number_of_nodes'>number_of_nodes</span><span class='comma'>,</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_used'>used</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
   <span class='kw'>while</span> <span class='id identifier rubyid_st'>st</span><span class='lbracket'>[</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='id identifier rubyid_st'>st</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span>
     <span class='kw'>yield</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
@@ -5993,7 +5993,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Nov 16 23:24:53 2022 by
+  Generated on Thu Nov 17 02:47:11 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
