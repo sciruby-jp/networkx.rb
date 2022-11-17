@@ -7020,27 +7020,27 @@ the flow values in the edges</tt>)</span>
       <pre class="lines">
 
 
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
 173
 174
 175
 176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190</pre>
+177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_compose'>compose</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -8400,6 +8400,19 @@ the flow values in the edges</tt>)</span>
       <pre class="lines">
 
 
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
 103
 104
 105
@@ -8408,23 +8421,10 @@ the flow values in the edges</tt>)</span>
 108
 109
 110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124</pre>
+111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_difference'>difference</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -9051,17 +9051,17 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
-234
-235
-236
-237
-238
-239
-240
-241</pre>
+221
+222
+223
+224
+225
+226
+227
+228</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 221</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_disjoint_union'>disjoint_union</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_g1'>new_g1</span> <span class='op'>=</span> <span class='id identifier rubyid_convert_to_distinct_labels'>convert_to_distinct_labels</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span>
@@ -12347,20 +12347,7 @@ predcessor hash and distance hash</tt>)</span>
 79
 80
 81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
+82</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 60</span>
@@ -12374,28 +12361,15 @@ predcessor hash and distance hash</tt>)</span>
 
   <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span> <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_node'>add_node</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
 
-  <span class='kw'>if</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_number_of_edges'>number_of_edges</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_number_of_edges'>number_of_edges</span>
-    <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_adj'>adj</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_u_edges'>u_edges</span><span class='op'>|</span>
-      <span class='id identifier rubyid_u_edges'>u_edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='op'>|</span>
-        <span class='kw'>if</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
-          <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span>
-            <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span>
-          <span class='kw'>end</span>
-        <span class='kw'>elsif</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
-          <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span> <span class='op'>=</span> <span class='id identifier rubyid_g2'>g2</span><span class='comma'>,</span> <span class='id identifier rubyid_g1'>g1</span> <span class='kw'>if</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_number_of_edges'>number_of_edges</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_number_of_edges'>number_of_edges</span>
+  <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_adj'>adj</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_u_edges'>u_edges</span><span class='op'>|</span>
+    <span class='id identifier rubyid_u_edges'>u_edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
+        <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span>
+          <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span>
         <span class='kw'>end</span>
-      <span class='kw'>end</span>
-    <span class='kw'>end</span>
-  <span class='kw'>else</span>
-    <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_adj'>adj</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_u_edges'>u_edges</span><span class='op'>|</span>
-      <span class='id identifier rubyid_u_edges'>u_edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='op'>|</span>
-        <span class='kw'>if</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
-          <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span>
-            <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span>
-          <span class='kw'>end</span>
-        <span class='kw'>elsif</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
-          <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='rparen'>)</span>
-        <span class='kw'>end</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_u'>u</span><span class='comma'>,</span> <span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='rparen'>)</span>
       <span class='kw'>end</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
@@ -16978,6 +16952,19 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
 132
 133
 134
@@ -16998,23 +16985,10 @@ predcessor hash and distance hash</tt>)</span>
 149
 150
 151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165</pre>
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 119</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_symmetric_difference'>symmetric_difference</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -17608,6 +17582,19 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
 198
 199
 200
@@ -17623,23 +17610,10 @@ predcessor hash and distance hash</tt>)</span>
 210
 211
 212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226</pre>
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 198</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 185</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_union'>union</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Arguments must be both Graphs or MultiGraphs!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span> <span class='op'>==</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
@@ -17965,7 +17939,7 @@ predcessor hash and distance hash</tt>)</span>
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 17 04:07:12 2022 by
+  Generated on Thu Nov 17 06:42:20 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
