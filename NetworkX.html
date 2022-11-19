@@ -5920,7 +5920,9 @@
 53
 54
 55
-56</pre>
+56
+57
+58</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 23</span>
@@ -5942,6 +5944,8 @@
         <span class='kw'>end</span>
       <span class='kw'>end</span>
       <span class='kw'>return</span> <span class='lbracket'>[</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id identifier rubyid_q'>q</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+      <span class='id identifier rubyid_q_s'>q_s</span> <span class='op'>=</span> <span class='id identifier rubyid_q'>q</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_q_t'>q_t</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_u'>u</span><span class='op'>|</span>
         <span class='id identifier rubyid_residual'>residual</span><span class='period'>.</span><span class='id identifier rubyid_pred'>pred</span><span class='lbracket'>[</span><span class='id identifier rubyid_u'>u</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='comma'>,</span> <span class='id identifier rubyid_uv_attrs'>uv_attrs</span><span class='op'>|</span>
@@ -9950,12 +9954,12 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
-110
-111
-112</pre>
+112
+113
+114</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 110</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 112</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_edmondskarp'>edmondskarp</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_residual'>residual</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_edmondskarp_impl'>edmondskarp_impl</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_residual'>residual</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span><span class='rparen'>)</span>
@@ -9991,8 +9995,6 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
-59
-60
 61
 62
 63
@@ -10013,10 +10015,12 @@ predcessor hash and distance hash</tt>)</span>
 78
 79
 80
-81</pre>
+81
+82
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 61</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_edmondskarp_core'>edmondskarp_core</span><span class='lparen'>(</span><span class='id identifier rubyid_residual'>residual</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_inf'>inf</span> <span class='op'>=</span> <span class='id identifier rubyid_residual'>residual</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='lbracket'>[</span><span class='symbol'>:inf</span><span class='rbracket'>]</span>
@@ -10085,8 +10089,6 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
-84
-85
 86
 87
 88
@@ -10100,10 +10102,12 @@ predcessor hash and distance hash</tt>)</span>
 96
 97
 98
-99</pre>
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/flow/edmondskarp.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_edmondskarp_impl'>edmondskarp_impl</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_residual'>residual</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Source not in graph!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_source'>source</span><span class='rparen'>)</span>
@@ -10118,7 +10122,7 @@ predcessor hash and distance hash</tt>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
   <span class='id identifier rubyid_cutoff'>cutoff</span> <span class='op'>=</span> <span class='const'>Float</span><span class='op'>::</span><span class='const'>INFINITY</span> <span class='kw'>if</span> <span class='id identifier rubyid_cutoff'>cutoff</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-  <span class='id identifier rubyid_res_graph'>res_graph</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='lbracket'>[</span><span class='symbol'>:flow_val</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_edmondskarp_core'>edmondskarp_core</span><span class='lparen'>(</span><span class='id identifier rubyid_res_graph'>res_graph</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_res_graph'>res_graph</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='lbracket'>[</span><span class='symbol'>:flow_value</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_edmondskarp_core'>edmondskarp_core</span><span class='lparen'>(</span><span class='id identifier rubyid_res_graph'>res_graph</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_res_graph'>res_graph</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -11540,7 +11544,7 @@ predcessor hash and distance hash</tt>)</span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_paths'>paths</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
-    <span class='id identifier rubyid_dsts'>dsts</span> <span class='op'>=</span> <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='id identifier rubyid_pred'>pred</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_target'>target</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_dsts'>dsts</span> <span class='op'>=</span> <span class='id identifier rubyid_pred'>pred</span>
     <span class='id identifier rubyid_dsts'>dsts</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_dst'>dst</span><span class='op'>|</span>
       <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_cur'>cur</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_dst'>dst</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_dst'>dst</span>
       <span class='kw'>until</span> <span class='id identifier rubyid_pred'>pred</span><span class='lbracket'>[</span><span class='id identifier rubyid_cur'>cur</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -15552,14 +15556,14 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+149
 150
 151
 152
-153
-154</pre>
+153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/flow/shortestaugmentingpath.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/flow/shortestaugmentingpath.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_shortest_augmenting_path'>shortest_augmenting_path</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_source'>source</span><span class='comma'>,</span> <span class='id identifier rubyid_target'>target</span><span class='comma'>,</span> <span class='id identifier rubyid_residual'>residual</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> \
                                   <span class='id identifier rubyid__value_only'>_value_only</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_two_phase'>two_phase</span> <span class='op'>=</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_cutoff'>cutoff</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
@@ -15712,8 +15716,7 @@ predcessor hash and distance hash</tt>)</span>
 102
 103
 104
-105
-106</pre>
+105</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/flow/shortestaugmentingpath.rb', line 3</span>
@@ -15761,8 +15764,7 @@ predcessor hash and distance hash</tt>)</span>
     <span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:curr_edge</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="NetworkX/CurrentEdge.html" title="NetworkX::CurrentEdge (class)">CurrentEdge</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="NetworkX/CurrentEdge.html#initialize-instance_method" title="NetworkX::CurrentEdge#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_r_adj'>r_adj</span><span class='lbracket'>[</span><span class='id identifier rubyid_node'>node</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_counts'>counts</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Array.html" title="Array (class)">Array</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='int'>2</span> <span class='op'>*</span> <span class='id identifier rubyid_n'>n</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>0</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_counts'>counts</span><span class='period'>.</span><span class='id identifier rubyid_fill'>fill</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_counts'>counts</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='int'>2</span> <span class='op'>*</span> <span class='id identifier rubyid_n'>n</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_r_nodes'>r_nodes</span><span class='period'>.</span><span class='id identifier rubyid_each_value'>each_value</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_attrs'>attrs</span><span class='op'>|</span> <span class='id identifier rubyid_counts'>counts</span><span class='lbracket'>[</span><span class='id identifier rubyid_attrs'>attrs</span><span class='lbracket'>[</span><span class='symbol'>:height</span><span class='rbracket'>]</span><span class='rbracket'>]</span> <span class='op'>+=</span> <span class='int'>1</span> <span class='rbrace'>}</span>
   <span class='id identifier rubyid_inf'>inf</span> <span class='op'>=</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='lbracket'>[</span><span class='symbol'>:inf</span><span class='rbracket'>]</span>
 
@@ -17885,6 +17887,7 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+108
 109
 110
 111
@@ -17903,11 +17906,10 @@ predcessor hash and distance hash</tt>)</span>
 124
 125
 126
-127
-128</pre>
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/flow/shortestaugmentingpath.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/flow/shortestaugmentingpath.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_augment'>augment</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='id identifier rubyid_inf'>inf</span><span class='comma'>,</span> <span class='id identifier rubyid_r_adj'>r_adj</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_flow'>flow</span> <span class='op'>=</span> <span class='id identifier rubyid_inf'>inf</span>
@@ -17939,7 +17941,7 @@ predcessor hash and distance hash</tt>)</span>
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 17 07:52:04 2022 by
+  Generated on Sat Nov 19 00:14:01 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
