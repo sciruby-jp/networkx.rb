@@ -930,6 +930,28 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#add_path-instance_method" title="#add_path (instance method)">#<strong>add_path</strong>(paths)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#add_weighted_edge-instance_method" title="#add_weighted_edge (instance method)">#<strong>add_weighted_edge</strong>(node1, node2, weight)  &#x21d2; Object </a>
     
 
@@ -3633,6 +3655,36 @@
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="add_path-instance_method">
+  
+    #<strong>add_path</strong>(paths)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 107</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_path'>add_path</span><span class='lparen'>(</span><span class='id identifier rubyid_paths'>paths</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_paths'>paths</span><span class='period'>.</span><span class='id identifier rubyid_each_cons'>each_cons</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='op'>|</span> <span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="add_weighted_edge-instance_method">
   
     #<strong>add_weighted_edge</strong>(node1, node2, weight)  &#x21d2; <tt>Object</tt> 
@@ -3718,12 +3770,12 @@
       <pre class="lines">
 
 
-177
-178
-179</pre>
+181
+182
+183</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 181</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_weighted_edge'>add_weighted_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2'>node2</span><span class='comma'>,</span> <span class='id identifier rubyid_weight'>weight</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2'>node2</span><span class='comma'>,</span> <span class='label'>weight:</span> <span class='id identifier rubyid_weight'>weight</span><span class='rparen'>)</span>
@@ -3817,19 +3869,19 @@
       <pre class="lines">
 
 
-189
-190
-191
-192
 193
 194
 195
 196
 197
-198</pre>
+198
+199
+200
+201
+202</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 189</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_weighted_edges'>add_weighted_edges</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='comma'>,</span> <span class='id identifier rubyid_weights'>weights</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>edges and weights array must have equal number of elements.</span><span class='tstring_end'>&#39;</span></span> \
@@ -3910,14 +3962,14 @@
       <pre class="lines">
 
 
-204
-205
-206
-207
-208</pre>
+208
+209
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 208</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_add_weighted_edges_from'>add_weighted_edges_from</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='comma'>,</span> <span class='label'>weight:</span> <span class='symbol'>:weight</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_edges'>edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='comma'>,</span> <span class='id identifier rubyid_t'>t</span><span class='comma'>,</span> <span class='id identifier rubyid_w'>w</span><span class='op'>|</span>
@@ -4054,14 +4106,14 @@
       <pre class="lines">
 
 
-265
-266
-267
-268
-269</pre>
+269
+270
+271
+272
+273</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 269</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear'>clear</span>
   <span class='ivar'>@adj</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
@@ -4099,18 +4151,18 @@
       <pre class="lines">
 
 
-416
-417
-418
-419
 420
 421
 422
 423
-424</pre>
+424
+425
+426
+427
+428</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 416</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 420</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_degree'>degree</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -4351,12 +4403,12 @@
       <pre class="lines">
 
 
-438
-439
-440</pre>
+442
+443
+444</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 438</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 442</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_directed?'>directed?</span>
   <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NetworkX::DiGraph</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NetworkX::MultiDiGraph</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -4712,10 +4764,6 @@
       <pre class="lines">
 
 
-243
-244
-245
-246
 247
 248
 249
@@ -4728,10 +4776,14 @@
 256
 257
 258
-259</pre>
+259
+260
+261
+262
+263</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_edge'>each_edge</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_enum_for'>enum_for</span><span class='lparen'>(</span><span class='symbol'>:each_edge</span><span class='comma'>,</span> <span class='label'>data:</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
@@ -4770,14 +4822,14 @@
       <pre class="lines">
 
 
-225
-226
-227
-228
-229</pre>
+229
+230
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 225</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_node'>each_node</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_enum_for'>enum_for</span><span class='lparen'>(</span><span class='symbol'>:each_node</span><span class='comma'>,</span> <span class='label'>data:</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
@@ -4876,12 +4928,12 @@
       <pre class="lines">
 
 
-289
-290
-291</pre>
+293
+294
+295</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 289</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 293</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edge?'>edge?</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2'>node2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_node?'>node?</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='ivar'>@adj</span><span class='lbracket'>[</span><span class='id identifier rubyid_node1'>node1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_node2'>node2</span><span class='rparen'>)</span>
@@ -4945,10 +4997,6 @@
       <pre class="lines">
 
 
-396
-397
-398
-399
 400
 401
 402
@@ -4962,10 +5010,14 @@
 410
 411
 412
-413</pre>
+413
+414
+415
+416
+417</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 396</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 400</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edge_subgraph'>edge_subgraph</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_edges'>edges</span>
@@ -5056,12 +5108,12 @@
       <pre class="lines">
 
 
-236
-237
-238</pre>
+240
+241
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 240</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_edges'>edges</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_each_edge'>each_edge</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
@@ -5154,14 +5206,14 @@
       <pre class="lines">
 
 
-313
-314
-315
-316
-317</pre>
+317
+318
+319
+320
+321</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 313</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 317</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_edge_data'>get_edge_data</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2'>node2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>KeyError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No such edge exists!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_node?'>node?</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_node?'>node?</span><span class='lparen'>(</span><span class='id identifier rubyid_node2'>node2</span><span class='rparen'>)</span>
@@ -5240,14 +5292,14 @@
       <pre class="lines">
 
 
-300
-301
-302
-303
-304</pre>
+304
+305
+306
+307
+308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 300</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 304</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_node_data'>get_node_data</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No such node exists!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_node?'>node?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
@@ -5274,16 +5326,16 @@
       <pre class="lines">
 
 
-426
-427
-428
-429
 430
 431
-432</pre>
+432
+433
+434
+435
+436</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 426</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 430</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_info'>info</span>
   <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span>
@@ -5334,12 +5386,12 @@
       <pre class="lines">
 
 
-434
-435
-436</pre>
+438
+439
+440</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 434</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 438</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_multigraph?'>multigraph?</span>
   <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NetworkX::MultiGraph</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>NetworkX::MultiDiGraph</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -5416,14 +5468,14 @@
       <pre class="lines">
 
 
-325
-326
-327
-328
-329</pre>
+329
+330
+331
+332
+333</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 325</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 329</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_neighbours'>neighbours</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>KeyError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>No such node exists!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_node?'>node?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
@@ -5506,12 +5558,12 @@
       <pre class="lines">
 
 
-277
-278
-279</pre>
+281
+282
+283</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 277</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 281</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_node?'>node?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='ivar'>@nodes</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
@@ -5587,16 +5639,16 @@
       <pre class="lines">
 
 
-217
-218
-219
-220
 221
 222
-223</pre>
+223
+224
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 217</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 221</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_nodes'>nodes</span><span class='lparen'>(</span><span class='label'>data:</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_data'>data</span>
@@ -5644,12 +5696,12 @@
       <pre class="lines">
 
 
-343
-344
-345</pre>
+347
+348
+349</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 343</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 347</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_number_of_edges'>number_of_edges</span>
   <span class='ivar'>@adj</span><span class='period'>.</span><span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:length</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sum'>sum</span> <span class='op'>/</span> <span class='int'>2</span>
@@ -5693,12 +5745,12 @@
       <pre class="lines">
 
 
-335
-336
-337</pre>
+339
+340
+341</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 335</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 339</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_number_of_nodes'>number_of_nodes</span>
   <span class='ivar'>@nodes</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span>
@@ -5858,17 +5910,17 @@
       <pre class="lines">
 
 
-144
-145
-146
-147
 148
 149
 150
-151</pre>
+151
+152
+153
+154
+155</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 144</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 148</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_edge'>remove_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='comma'>,</span> <span class='id identifier rubyid_node2'>node2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>KeyError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_node1'>node1</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not a valid node.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@nodes</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_node1'>node1</span><span class='rparen'>)</span>
@@ -5937,18 +5989,18 @@
       <pre class="lines">
 
 
-159
-160
-161
-162
 163
 164
 165
 166
-167</pre>
+167
+168
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_edges'>remove_edges</span><span class='lparen'>(</span><span class='id identifier rubyid_edges'>edges</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_edges'>edges</span>
@@ -6031,16 +6083,16 @@
       <pre class="lines">
 
 
-113
-114
-115
-116
 117
 118
-119</pre>
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 113</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_node'>remove_node</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>KeyError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Error in deleting node </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_node'>node</span><span class='embexpr_end'>}</span><span class='tstring_content'> from Graph.</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='ivar'>@nodes</span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
@@ -6108,18 +6160,18 @@
       <pre class="lines">
 
 
-127
-128
-129
-130
 131
 132
 133
 134
-135</pre>
+135
+136
+137
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_remove_nodes'>remove_nodes</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_nodes'>nodes</span>
@@ -6191,19 +6243,19 @@
       <pre class="lines">
 
 
-354
-355
-356
-357
 358
 359
 360
 361
 362
-363</pre>
+363
+364
+365
+366
+367</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 354</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 358</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_size'>size</span><span class='lparen'>(</span><span class='id identifier rubyid_is_weighted'>is_weighted</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_is_weighted'>is_weighted</span>
@@ -6274,10 +6326,6 @@
       <pre class="lines">
 
 
-371
-372
-373
-374
 375
 376
 377
@@ -6291,10 +6339,14 @@
 385
 386
 387
-388</pre>
+388
+389
+390
+391
+392</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 371</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/graph.rb', line 375</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subgraph'>subgraph</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_nodes'>nodes</span>
@@ -6324,7 +6376,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Nov 19 07:18:25 2022 by
+  Generated on Sat Nov 19 07:49:03 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
