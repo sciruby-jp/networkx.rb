@@ -7024,6 +7024,10 @@ the flow values in the edges</tt>)</span>
       <pre class="lines">
 
 
+156
+157
+158
+159
 160
 161
 162
@@ -7036,19 +7040,13 @@ the flow values in the edges</tt>)</span>
 169
 170
 171
-172
-173
-174
-175
-176
-177</pre>
+172</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 160</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 156</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_compose'>compose</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Arguments must be both Graphs or MultiGraphs!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span> <span class='op'>==</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
 
@@ -7225,15 +7223,13 @@ the flow values in the edges</tt>)</span>
 48
 49
 50
-51
-52</pre>
+51</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_convert_to_distinct_labels'>convert_to_distinct_labels</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='comma'>,</span> <span class='id identifier rubyid_starting_int'>starting_int</span> <span class='op'>=</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_graph'>graph</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_new_graph'>new_graph</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 
   <span class='id identifier rubyid_idx_dict'>idx_dict</span> <span class='op'>=</span> <span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_to_h'>to_h</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_v'>v</span><span class='op'>|</span>
     <span class='id identifier rubyid_starting_int'>starting_int</span> <span class='op'>+=</span> <span class='int'>1</span>
@@ -8404,6 +8400,8 @@ the flow values in the edges</tt>)</span>
       <pre class="lines">
 
 
+88
+89
 90
 91
 92
@@ -8422,17 +8420,13 @@ the flow values in the edges</tt>)</span>
 105
 106
 107
-108
-109
-110
-111</pre>
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_difference'>difference</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Arguments must be both Graphs or MultiGraphs!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span> <span class='op'>==</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Node sets must be equal!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>-</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -9055,17 +9049,17 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
-221
-222
-223
-224
-225
-226
-227
-228</pre>
+206
+207
+208
+209
+210
+211
+212
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 206</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_disjoint_union'>disjoint_union</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_g1'>new_g1</span> <span class='op'>=</span> <span class='id identifier rubyid_convert_to_distinct_labels'>convert_to_distinct_labels</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span>
@@ -12329,6 +12323,7 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+59
 60
 61
 62
@@ -12349,16 +12344,13 @@ predcessor hash and distance hash</tt>)</span>
 77
 78
 79
-80
-81
-82</pre>
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_intersection'>intersection</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Arguments must be both Graphs or MultiGraphs!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span> <span class='op'>==</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Node sets must be equal!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>-</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -16954,6 +16946,9 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+116
+117
+118
 119
 120
 121
@@ -16983,18 +16978,13 @@ predcessor hash and distance hash</tt>)</span>
 145
 146
 147
-148
-149
-150
-151
-152</pre>
+148</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 119</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_symmetric_difference'>symmetric_difference</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_load'>load</span><span class='lparen'>(</span><span class='const'>Marshal</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='rparen'>)</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_result'>result</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
 
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Arguments must be both Graphs or MultiGraphs!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span> <span class='op'>==</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Node sets must be equal!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>-</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -17584,6 +17574,11 @@ predcessor hash and distance hash</tt>)</span>
       <pre class="lines">
 
 
+180
+181
+182
+183
+184
 185
 186
 187
@@ -17597,40 +17592,15 @@ predcessor hash and distance hash</tt>)</span>
 195
 196
 197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213</pre>
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 185</span>
+      <pre class="code"><span class="info file"># File 'lib/networkx/operators/binary.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_union'>union</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='comma'>,</span> <span class='id identifier rubyid_g2'>g2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Arguments must be both Graphs or MultiGraphs!</span><span class='tstring_end'>&#39;</span></span> <span class='kw'>unless</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span> <span class='op'>==</span> <span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_multigraph?'>multigraph?</span>
 
-  <span class='kw'>case</span> <span class='id identifier rubyid_g1'>g1</span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/MultiGraph.html" title="NetworkX::MultiGraph (class)">MultiGraph</a></span></span>
-    <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/MultiGraph.html" title="NetworkX::MultiGraph (class)">MultiGraph</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="NetworkX/Graph.html#initialize-instance_method" title="NetworkX::Graph#initialize (method)">new</a></span></span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/MultiDiGraph.html" title="NetworkX::MultiDiGraph (class)">MultiDiGraph</a></span></span>
-    <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/MultiDiGraph.html" title="NetworkX::MultiDiGraph (class)">MultiDiGraph</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="NetworkX/DiGraph.html#initialize-instance_method" title="NetworkX::DiGraph#initialize (method)">new</a></span></span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/DiGraph.html" title="NetworkX::DiGraph (class)">DiGraph</a></span></span>
-    <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/DiGraph.html" title="NetworkX::DiGraph (class)">DiGraph</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="NetworkX/DiGraph.html#initialize-instance_method" title="NetworkX::DiGraph#initialize (method)">new</a></span></span>
-  <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/Graph.html" title="NetworkX::Graph (class)">Graph</a></span></span>
-    <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="NetworkX (module)">NetworkX</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="NetworkX/Graph.html" title="NetworkX::Graph (class)">Graph</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="NetworkX/Graph.html#initialize-instance_method" title="NetworkX::Graph#initialize (method)">new</a></span></span>
-  <span class='kw'>end</span>
-
+  <span class='id identifier rubyid_new_graph'>new_graph</span> <span class='op'>=</span> <span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='id identifier rubyid_new_graph'>new_graph</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_g1'>g1</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new_graph'>new_graph</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='id identifier rubyid_g2'>g2</span><span class='period'>.</span><span class='id identifier rubyid_graph'>graph</span><span class='rparen'>)</span>
 
@@ -17941,7 +17911,7 @@ predcessor hash and distance hash</tt>)</span>
 </div>
 
       <div id="footer">
-  Generated on Sat Nov 19 00:14:01 2022 by
+  Generated on Sat Nov 19 06:57:55 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
